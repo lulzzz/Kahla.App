@@ -107,7 +107,7 @@ export class ApiService {
     /**
      * update the version
      */
-    public UpdateVersion(): Observable<AiurValue<Version>> {
+    public UpdateVersion(): Observable<Version> {
       return this.Get('/Version');
     }
 
