@@ -19,7 +19,7 @@ import { AppComponent } from '../Controllers/app.component';
 import { Values } from '../values';
 import { UserDetailViewModel } from '../Models/ApiModels/UserDetailViewModel';
 import { GlobalValue } from './GlobalValue';
-
+import { Version } from '../Models/Version';
 @Injectable()
 export class ApiService {
     public static serverAddress;
@@ -102,6 +102,13 @@ export class ApiService {
 
     public Me(): Observable<AiurValue<KahlaUser>> {
         return this.Get(`/Me`);
+    }
+
+    /**
+     * update the version
+     */
+    public UpdateVersion(): Observable<AiurValue<Version>> {
+      return this.Get('/Version');
     }
 
     public MyFriends(orderByName: boolean): Observable<AiurCollection<ContactInfo>> {
